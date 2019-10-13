@@ -1,6 +1,8 @@
 package com.example.zooapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.view.View;
@@ -11,11 +13,21 @@ public class MainActivity extends AppCompatActivity {
 
     EditText etType, etName, etSex, etAge;
     Button btAdd;
+    RecyclerView rvAnimals;
+    private AnimalAdapter mAdapter;
+    private RecyclerView.LayoutManager layoutManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        rvAnimals = findViewById(R.id.rvAnimals);
+        layoutManager = new LinearLayoutManager(this);
+        rvAnimals.setLayoutManager(layoutManager);
+
+        mAdapter = new AnimalAdapter(getApplicationContext());
+        rvAnimals.setAdapter(mAdapter);
 
         final AnimalRepository repository = AnimalRepository.getInstance();
 
@@ -42,7 +54,9 @@ public class MainActivity extends AppCompatActivity {
                 animal.age = age;
 
                 // add animal to repo
-                repository.addAnimal(animal);
+                repository.getAnimals().add(animal);
+
+                mAdapter.update();
 
                 // clear the fields
                 etAge.getText().clear();

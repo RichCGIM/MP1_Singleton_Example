@@ -10,7 +10,15 @@ public class AnimalRepository {
 
     private AnimalRepository() {
         this.animals = new ArrayList<>();
+        Animal animal = new Animal();
+        animal.age = 2;
+        animal.sex = "M";
+        animal.type = "Dog";
+        animal.name = "Sputnik";
+        this.animals.add(animal);
     }
+
+
     public static AnimalRepository getInstance() {
         if (instance == null) {
             instance = new AnimalRepository();
