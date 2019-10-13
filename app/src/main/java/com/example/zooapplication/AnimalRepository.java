@@ -6,7 +6,7 @@ import java.util.List;
 public class AnimalRepository {
     //SINGLETON PATTERN
     private static AnimalRepository instance = null;
-    public List<Animal> animals;
+    private List<Animal> animals;
 
     private AnimalRepository() {
         this.animals = new ArrayList<>();
@@ -16,5 +16,13 @@ public class AnimalRepository {
             instance = new AnimalRepository();
         }
         return instance;
+    }
+
+    public void addAnimal(Animal animal) {
+        this.animals.add(animal);
+    }
+
+    public List<Animal> getAnimals() {
+        return this.animals;
     }
 }
