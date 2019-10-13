@@ -8,15 +8,16 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class AnimalAdapter extends RecyclerView.Adapter<AnimalViewHolder> {
     private LayoutInflater mInflater;
-    private List<Animal> mData;
+    private List<Animal> mData = new ArrayList<>();
 
     public AnimalAdapter(Context context) {
         this.mInflater = LayoutInflater.from(context);
-        this.mData = AnimalRepository.getInstance().getAnimals();
+        this.mData.addAll(AnimalRepository.getInstance().getAnimals());
 
     }
 

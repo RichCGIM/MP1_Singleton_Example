@@ -1,15 +1,20 @@
 package com.example.zooapplication;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Iterator;
 import java.util.List;
+import java.util.ListIterator;
 
 public class AnimalRepository {
     //SINGLETON PATTERN
     private static AnimalRepository instance = null;
-    private List<Animal> animals;
+    private List<Animal> animals = new ArrayList<>();
 
     private AnimalRepository() {
-        this.animals = new ArrayList<>();
         Animal animal = new Animal();
         animal.age = 2;
         animal.sex = "M";

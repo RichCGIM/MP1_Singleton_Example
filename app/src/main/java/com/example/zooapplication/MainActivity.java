@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
                 animal.age = age;
 
                 // add animal to repo
-                repository.getAnimals().add(animal);
+                repository.addAnimal(animal);
 
                 mAdapter.update();
 
