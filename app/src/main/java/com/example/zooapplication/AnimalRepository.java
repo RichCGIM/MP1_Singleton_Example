@@ -1,13 +1,7 @@
 package com.example.zooapplication;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Iterator;
 import java.util.List;
-import java.util.ListIterator;
 
 public class AnimalRepository {
     //SINGLETON PATTERN
@@ -15,14 +9,22 @@ public class AnimalRepository {
     private List<Animal> animals = new ArrayList<>();
 
     private AnimalRepository() {
-        Animal animal = new Animal();
-        animal.age = 2;
-        animal.sex = "M";
-        animal.type = "Dog";
-        animal.name = "Sputnik";
-        this.animals.add(animal);
-    }
+        Animal animal1 = new Animal();
+        animal1.age = 2;
+        animal1.sex = "M";
+        animal1.type = "Dog";
+        animal1.name = "Sputnik";
 
+        Animal animal2 = new Animal();
+        animal2.age = 2;
+        animal2.sex = "F";
+        animal2.type = "Cat";
+        animal2.name = "Fipoo";
+
+        this.animals.add(animal1);
+        this.animals.add(animal2);
+
+    }
 
     public static AnimalRepository getInstance() {
         if (instance == null) {

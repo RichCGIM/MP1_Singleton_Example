@@ -18,7 +18,6 @@ public class AnimalAdapter extends RecyclerView.Adapter<AnimalViewHolder> {
     public AnimalAdapter(Context context) {
         this.mInflater = LayoutInflater.from(context);
         this.mData.addAll(AnimalRepository.getInstance().getAnimals());
-
     }
 
     @NonNull
