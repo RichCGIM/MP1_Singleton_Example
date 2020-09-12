@@ -11,10 +11,10 @@ public class AnimalViewHolder extends RecyclerView.ViewHolder {
 
     public AnimalViewHolder(View itemView) {
         super(itemView);
-        tvType = itemView.findViewById(R.id.tvType);
-        tvName = itemView.findViewById(R.id.tvName);
-        tvSex = itemView.findViewById(R.id.tvSex);
-        tvAge = itemView.findViewById(R.id.tvAge);
+        tvType = itemView.findViewById(R.id.typeView);
+        tvName = itemView.findViewById(R.id.name);
+        tvSex = itemView.findViewById(R.id.sexView);
+        tvAge = itemView.findViewById(R.id.ageView);
     }
 
 }
